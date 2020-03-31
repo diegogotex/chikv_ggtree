@@ -1,0 +1,17 @@
+---
+title: "Filogenia CHIKV (em andamento)"
+author: Diego G. Teixeira
+date: "`r format(Sys.time(), '%d/%m/%Y')`"
+output: github_document
+---
+
+##Introdução
+
+Nesse estudo eu estou investigando a Filogenia do Vírus Chikungunya (CHIKV). O CHIKV é um Alphavirus, da família Togaviridae, normalmente definido por possuir um genoma de média de 11.5 kb, composto por duas janelas de leitura (Open Read Frame - ORF). A primeira ORF comporta 4 proteínas não estruturais nsP1, nsP2, nsP3 e nsP4; A segunda ORF comporta os genes responsáveis pela estrutura do virion, os genes C, E1, E2, 6K/TF e E3.
+
+```{r, out.width='90%', fig.align='center', fig.cap="Estrutura genômica do CHIKV",message=FALSE, warning=FALSE, echo=F}
+
+knitr::include_graphics("https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/Fig_genoma.png")
+
+```
+Apesar de ser caracterizado como um vírus que possui 2 ORFs e o genoma de referência, disponível no NCBI ([NC_004162](https://www.ncbi.nlm.nih.gov/nuccore/NC_004162.2)), corroborar com a afirmação, grande parte dos genomas completos de CHIKV disponíveis no NCBI apresentam um codom de parada entre os genes codificadores das proteínas nsP3 e nsP4. 
