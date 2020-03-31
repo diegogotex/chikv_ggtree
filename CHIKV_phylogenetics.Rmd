@@ -14,4 +14,12 @@ Nesse estudo eu estou investigando a Filogenia do Vírus Chikungunya (CHIKV). O 
 knitr::include_graphics("https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/Fig_genoma.png")
 
 ```
-Apesar de ser caracterizado como um vírus que possui 2 ORFs e o genoma de referência, disponível no NCBI ([NC_004162](https://www.ncbi.nlm.nih.gov/nuccore/NC_004162.2)), corroborar com a afirmação, grande parte dos genomas completos de CHIKV disponíveis no NCBI apresentam um codom de parada entre os genes codificadores das proteínas nsP3 e nsP4. 
+
+Apesar de ser caracterizado como um vírus que possui 2 ORFs e o genoma de referência, disponível no NCBI ([NC_004162](https://www.ncbi.nlm.nih.gov/nuccore/NC_004162.2)), corroborar com a afirmação, grande parte dos genomas completos de CHIKV disponíveis no NCBI apresentam um códon de parada entre os genes codificadores das proteínas nsP3 e nsP4. Inclusive, o genoma do vírus isolados de pessoas diferentes em Natal, também mostra que há o códon de parada nos isolados daqui.
+
+```{r, out.width='90%', fig.align='center', fig.cap="Códon de parada em 3 isolados do Brasil",message=FALSE, warning=FALSE, echo=F}
+
+knitr::include_graphics("https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/opal_genome.png")
+
+```
+
