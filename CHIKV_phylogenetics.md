@@ -1,7 +1,7 @@
 Filogenia CHIKV (em andamento)
 ================
 Diego G. Teixeira
-31/03/2020
+02/04/2020
 
 Introdução
 ----------
@@ -20,9 +20,21 @@ Apesar de ser caracterizado como um vírus que possui 2 ORFs e o genoma de refer
 Códon de parada (destacado pela linha horizontal vermelha) em 3 isolados do Brasil
 </p>
 
-A partir desse alinhamento, tive a ideia de observar a frequência do códon de parada em todos os genomas completos de CHIKV já publicados no NCBI.
+A partir desse alinhamento, tive a ideia de observar a frequência do códon de parada em todos os genomas completos de CHIKV já publicados.
 
 Obtenção das sequências completas de CHIKV
 ------------------------------------------
 
 ### NCBI
+
+1.  O primeiro passa para observar a frequência do códom de parada nos genomas de CHIVK, é baixar os genomas no [NCBI](https://www.ncbi.nlm.nih.gov/);
+2.  Em seguida, nós pesquisamos por "Chikungunya" no banco de dados de "nucleotide";
+3.  selecionamos o "Chikungunya virus" no campo "Results by taxon";
+
+    3.1. O campo de busca vai ficar dessa forma: "(chikungunya) AND "Chikungunya virus"\[porgn:\_\_txid37124\]";
+4.  O passo seguinte é selecionar apenas as sequências que tenham pelo menos 11kb de comprimento. Eu selecionei 13kb como comprimento máximo, mas isso foi apenas por causa do NCBI exigir que esse campo seja preenchido.
+
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/ncbi_length.png" alt="Códon de parada (destacado pela linha horizontal vermelha) em 3 isolados do Brasil" width="90%" />
+<p class="caption">
+Códon de parada (destacado pela linha horizontal vermelha) em 3 isolados do Brasil
+</p>
