@@ -29,7 +29,7 @@ A partir desse alinhamento, tive a ideia de observar a frequência do códon de 
 
 ###NCBI
 
-1. O primeiro passa para observar a frequência do códom de parada nos genomas de CHIVK, é baixar os genomas no [NCBI](https://www.ncbi.nlm.nih.gov/); 
+1. O primeiro passo para observar a frequência do códom de parada nos genomas de CHIVK, é baixar os genomas no [NCBI](https://www.ncbi.nlm.nih.gov/); 
 2. Em seguida, nós pesquisamos por "Chikungunya" no banco de dados de "nucleotide";
 3. selecionamos o "Chikungunya virus" no campo "Results by taxon"; 
 
@@ -89,6 +89,23 @@ file.close
 
 ```
 **OBS:** _inicialmente eu tive alguns erros durante o processo de formatação, no passo do loop2, por causa de um erro nas informações da sequência MK518395. por algum motivo, quando o loop chegava nela dava erro. inicialmente eu removi entrada e rodei o script, aí deu certo. mas em seguida, eu readicionei a entrada e saí removendo cada uma das features até identificar que o que estava causando a interrupção na execução do scritp estava na informação Assembly-Data._
+
+Após o processo de transformação do arquivo .gb em um arquivo tabular, eu realizei a etapa restante de formatação das informações de forma manual. Inseri a tabela no LibreOffice Calc (TALEZ o excell sirva...) e removi as sequências que não continham informação de País de coleta na entrada do genbank; em seguida, 
+
+
+
+
+
+##Alinhamento
+
+##Inferindo a filogenia
+
+##Admixture
+
+##Filogenia + Admixture
+
+##teste de Recombinação
+
 
 
 
