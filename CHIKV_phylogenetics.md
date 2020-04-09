@@ -3,7 +3,7 @@ Filogenia CHIKV (em andamento)
 Diego G. Teixeira
 09/04/2020
 
-\#\#Introdução
+## Introdução
 
 Nesse estudo eu estou investigando a Filogenia do Vírus Chikungunya
 (CHIKV). O CHIKV é um Alphavirus, da família Togaviridae, normalmente
@@ -29,9 +29,9 @@ parada nos isolados daqui.
 A partir desse alinhamento, tive a ideia de observar a frequência do
 códon de parada em todos os genomas completos de CHIKV já publicados.
 
-\#\#Obtenção das sequências completas de CHIKV
+## Obtenção das sequências completas de CHIKV
 
-\#\#\#NCBI
+### NCBI
 
 1.  O primeiro passo para observar a frequência do códom de parada nos
     genomas de CHIVK, é baixar os genomas no
@@ -117,12 +117,12 @@ manual. Inseri a tabela no LibreOffice Calc (TALEZ o excell sirva…) e
 removi as sequências que não continham informação de País de coleta na
 entrada do genbank; em seguida,
 
-\#\#Alinhamento
+## Alinhamento
 
-\#\#Inferindo a filogenia
+## Inferindo a filogenia
 
-\#\#Admixture
+## Admixture
 
-\#\#Filogenia + Admixture
+## Filogenia + Admixture
 
-\#\#teste de Recombinação
+## teste de Recombinação

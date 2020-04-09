@@ -5,7 +5,7 @@ date: "`r format(Sys.time(), '%d/%m/%Y')`"
 output: github_document
 ---
 
-##Introdução
+## Introdução
 
 Nesse estudo eu estou investigando a Filogenia do Vírus Chikungunya (CHIKV). O CHIKV é um Alphavirus, da família Togaviridae, normalmente definido por possuir um genoma de média de 11.5 kb, composto por duas janelas de leitura (Open Read Frame - ORF). A primeira ORF comporta 4 proteínas não estruturais nsP1, nsP2, nsP3 e nsP4; A segunda ORF comporta os genes responsáveis pela estrutura do virion, os genes C, E1, E2, 6K/TF e E3.
 
@@ -25,9 +25,9 @@ knitr::include_graphics("https://github.com/diegogotex/chikv_ggtree/blob/master/
 
 A partir desse alinhamento, tive a ideia de observar a frequência do códon de parada em todos os genomas completos de CHIKV já publicados. 
 
-##Obtenção das sequências completas de CHIKV
+## Obtenção das sequências completas de CHIKV
 
-###NCBI
+### NCBI
 
 1. O primeiro passo para observar a frequência do códom de parada nos genomas de CHIVK, é baixar os genomas no [NCBI](https://www.ncbi.nlm.nih.gov/); 
 2. Em seguida, nós pesquisamos por "Chikungunya" no banco de dados de "nucleotide";
@@ -96,15 +96,15 @@ Após o processo de transformação do arquivo .gb em um arquivo tabular, eu rea
 
 
 
-##Alinhamento
+## Alinhamento
 
-##Inferindo a filogenia
+## Inferindo a filogenia
 
-##Admixture
+## Admixture
 
-##Filogenia + Admixture
+## Filogenia + Admixture
 
-##teste de Recombinação
+## teste de Recombinação
 
 
 
