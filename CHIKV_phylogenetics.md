@@ -111,11 +111,18 @@ em seguida, eu readicionei a entrada e saí removendo cada uma das
 features até identificar que o que estava causando a interrupção na
 execução do scritp estava na informação Assembly-Data.*
 
-Após o processo de transformação do arquivo .gb em um arquivo tabular,
-eu realizei a etapa restante de formatação das informações de forma
-manual. Inseri a tabela no LibreOffice Calc (TALEZ o excell sirva…) e
-removi as sequências que não continham informação de País de coleta na
-entrada do genbank; em seguida,
+Após o processo de transformação do arquivo .gb (se quiser baixar o
+mesmo arquivo que eu trabalhei é esse aqui
+[CHIKV\_10\_5kb\_to\_13kb\_01\_mar\_20.gb](https://github.com/diegogotex/chikv_ggtree/blob/master/files/CHIKV_10_5kb_to_13kb_01_mar_20.gb))
+em um arquivo tabular, eu realizei a etapa restante de formatação das
+informações de forma manual. Inseri a tabela no LibreOffice Calc (TALEZ
+o excell sirva…) e removi as sequências que não continham informação de
+País na qual a amopstra foi coletada, na entrada do genbank, passando de
+958 entradas para 880. Eu filtrei essas sequências, pois a minha
+intenção nessa análise é identificar a presença do códon OPAL nos
+genomas e procurar alguma correlação com o local de infecção.
+
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/tab_file.png" width="90%" style="display: block; margin: auto;" />
 
 ## Alinhamento
 
