@@ -180,7 +180,7 @@ alinhamento apresenta 11.337 sítios, 75% disso corresponde a 8.427.
 desse modo, eu irei remover todas as sequências com comprimento inferior
 a 8.427 bases nucleotídicas, onde mais de 25% é composto por gaps. Para
 realizar essa etapa da análise, utilizarei uma ferramenta chamada
-(CIAlign)\[<https://pypi.org/project/cialign/>\].
+[CIAlign](https://pypi.org/project/cialign/).
 
 ``` bat
 CIAlign --infile CHIKV_Country_OPAL_MAFFT_noN_TRIM.fasta --outfile_stem CHIKV_Country_OPAL_MAFFT_noN_TRIM --remove_short --remove_min_length 8427 --plot_coverage_input --plot_coverage_output
