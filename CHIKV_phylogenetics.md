@@ -134,6 +134,11 @@ O passo segunte é transformar esta tabela em um arquivo fasta. No meu
 arquivo, eu mantive apenas o ACC, País e o códom na posição OPAL dos
 genomas (ACC|País|Códon), como cabeçalho. Ex.: \>LC259094.1|Angola|TGA.
 
+**OBS:** *é importante que no cabeçalho não contenha **espaço** e/ou
+**tabs** e nenhum dos seguintes caracteres: “:”, “,”, “)”, “(”, “;”,
+“\]”, “\[”, “’”. o RAxML, um dos programas que vamos utilziar pra
+inferir a filogenia, é cheio de frescura com o cabeçalho.*
+
 ## Alinhamento
 
 Para alinha meu arquivo fasta, eu utilizei a ferramenta
@@ -146,7 +151,7 @@ mafft --reorder --auto CHIKV_Country_OPAL.fasta > CHIKV_Country_OPAL_MAFFT.fasta
 uma vez alinhado, abri o alinhamento utilizando o
 [Aliview](https://ormbunkar.se/aliview/). **OBS:** *Eu costumo utilizar
 o Aliview porque é um software leve e com compatibilidade tanto com
-Linux, quanto com o macOS e o Windwos.*
+Linux, quanto com o macOS e o Windows.*
 
 Uma vez aberto no aliview, o alinhamento vai ficar dessa forma:
 
@@ -190,7 +195,46 @@ Abrindo o alinhamento final no Aliview, nos temos ele desta forma:
 
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/ali3.png" width="90%" style="display: block; margin: auto;" />
 
+No final, o dataset ficará com um total de 826 sequências. Para a estapa
+de inferência filogenética, exporte o alinhamento em .fasta, .phy e
+.nexus.
+
 ## Inferindo a filogenia
+
+Em uma análise inicial de inferência filogenética, nós iremos utilizar o
+programa [RAxML](https://cme.h-its.org/exelixis/web/software/raxml/). eu
+configurei o programa para rodar uma inferência rápida com bootstrap,
+com a opção “-f a”, modelo ge substituição GTR e com árvore final
+avaliada sob variação gama “-m GTRCAT”. A opção “-x 123” determina a
+seed. a “-p 456” número aleatório da seed para a inferência por
+parcimônia. “-T 15” é o número de threads que eu utilizei e “-N 500” o
+número de replicatas de bootstrap.
+
+``` bat
+raxmlHPC-PTHREADS -m GTRCAT -f a -x 123 -p 456 -T 15 -N 500 -s CHIKV_Country_OPAL_MAFFT_noN_TRIM_Coverage_cleaned.phy -n CHIKV_100BS
+```
+
+Após terminar de processar todas as replicatas, o RAxML vai retornar
+diversos arquivos, dentre esses iremos utilizar o RAxML\_bipartitions,
+que contém a árvore final com os valores de bootstrap associados às
+dicotomias. *Caso você queira trabalhar a topologia da árvore no R, dá
+pra importar tanto o arquivo RAxML\_bipartitions quanto o
+RAxML\_bootstrap, que a funções dos pacotes ggtree e app conseguem
+realizar a compilação de todas as árvores em uma só.* Iremos abrir o
+arquivo RAxML\_bibartitions com o programa
+[FigTree](http://tree.bio.ed.ac.uk/software/figtree/). Como os genótipos
+de CHIKV já foram bem descritos antes, eu irei colorir os ramos de
+acordo com os genótipos ECSA, Asian e West African. Dentro do genótipo
+ECSA eu vou destacar as amostras isoladas no Brasil e as amostras IOL
+(um “subgenótipo” dentro do ECSA).
+
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/arvre1.png" width="90%" style="display: block; margin: auto;" />
+
+Na próxima iamgem, eu adicionei o nome das sequências, mas omiti os
+valores de suporte de bootstrap nas dicotomias, para evitar uma poluição
+visual.
+
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/arvre2.png" width="90%" style="display: block; margin: auto;" />
 
 ## Admixture
 
