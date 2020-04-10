@@ -144,13 +144,13 @@ mafft --reorder --auto CHIKV_Country_OPAL.fasta > CHIKV_Country_OPAL_MAFFT.fasta
 ```
 
 uma vez alinhado, abri o alinhamento utilizando o
-[Aliview](https://ormbunkar.se/aliview/). **OBS:**\_Eu costumo utilizar
+[Aliview](https://ormbunkar.se/aliview/). **OBS:** *Eu costumo utilizar
 o Aliview porque é um software leve e com compatibilidade tanto com
-Linux, quanto com o macOS e o Windwos.\_
+Linux, quanto com o macOS e o Windwos.*
 
 Uma vez aberto no aliview, o alinhamento vai ficar dessa forma:
 
-Ali1
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/ali1.png" width="90%" style="display: block; margin: auto;" />
 
 Agora eu vou “tratar” esse alinhamento. O primeiro passo é transformar
 todas as bases mal sequenciadas (geralmente são traocadasas bases
@@ -169,12 +169,7 @@ dentro da região de interesse no alinhamento. *Resuzir o alinhamento
 dessa forma faz o programa de inferência rodar mais rápido,além de
 reduzir a quantidade de sítios sem informação de parcimônia (sítios que
 contenham pelo menos dois tipos de nucleotídeos diferentes, e que pelo
-menos dois deles ocorram com uma freqência mínima de duas vezes).*
+menos dois deles ocorram com uma freqência mínima de duas vezes). Um
+exemplo do que eu estou falando é mostrado a seguir:*
 
-## Inferindo a filogenia
-
-## Admixture
-
-## Filogenia + Admixture
-
-## teste de Recombinação
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/ali2.jpg" width="90%" style="display: block; margin: auto;" />

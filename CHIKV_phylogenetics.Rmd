@@ -112,11 +112,15 @@ mafft --reorder --auto CHIKV_Country_OPAL.fasta > CHIKV_Country_OPAL_MAFFT.fasta
 ```
 
 uma vez alinhado, abri o alinhamento utilizando o [Aliview](https://ormbunkar.se/aliview/).
-**OBS:**_Eu costumo utilizar o Aliview porque é um software leve e com compatibilidade tanto com Linux, quanto com o macOS e o Windwos._
+**OBS:** _Eu costumo utilizar o Aliview porque é um software leve e com compatibilidade tanto com Linux, quanto com o macOS e o Windwos._
 
 Uma vez aberto no aliview, o alinhamento vai ficar dessa forma:
 
-Ali1
+```{r, out.width='90%', fig.align='center', fig.cap= "",message=FALSE, warning=FALSE, echo=F}
+
+knitr::include_graphics("https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/ali1.png")
+
+```
 
 Agora eu vou "tratar" esse alinhamento. O primeiro passo é transformar todas as bases mal sequenciadas (geralmente são traocadasas bases normais [A,T,C,G] por o caractére "n"):
 
@@ -124,7 +128,12 @@ Agora eu vou "tratar" esse alinhamento. O primeiro passo é transformar todas as
 cat CHIKV_Country_OPAL_MAFFT.fasta | sed -e '^[^>]/s/[^ATCGatcg-]/-/g' > CHIKV_Country_OPAL_MAFFT_noN.fasta
 ```
 
-em seguida eu vou remover as regiões 5'e 3'UTR, veja na imagem que o alinhamento em ambas as extremidades é ruim por apresentar uma baixa cobertura e muitas regiões com supostos indels (inserções ou deleções), as quais, no fim, não irão adicionar muita coisa na inferência da filogenia. O passo seguinte é remover as regiões de baixa cobertura dentro da região de interesse no alinhamento. _Resuzir o alinhamento dessa forma faz o programa de inferência rodar mais rápido,além de reduzir a quantidade de sítios sem informação de parcimônia (sítios que contenham pelo menos dois tipos de nucleotídeos diferentes, e que pelo menos dois deles ocorram com uma freqência mínima de duas vezes)._ 
+em seguida eu vou remover as regiões 5'e 3'UTR, veja na imagem que o alinhamento em ambas as extremidades é ruim por apresentar uma baixa cobertura e muitas regiões com supostos indels (inserções ou deleções), as quais, no fim, não irão adicionar muita coisa na inferência da filogenia. O passo seguinte é remover as regiões de baixa cobertura dentro da região de interesse no alinhamento. 
+_Resuzir o alinhamento dessa forma faz o programa de inferência rodar mais rápido,além de reduzir a quantidade de sítios sem informação de parcimônia (sítios que contenham pelo menos dois tipos de nucleotídeos diferentes, e que pelo menos dois deles ocorram com uma freqência mínima de duas vezes). Um exemplo do que eu estou falando é mostrado a seguir:_ 
+ 
+```{r, out.width='90%', fig.align='center', fig.cap= "",message=FALSE, warning=FALSE, echo=F}
+
+knitr::include_graphics("https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/ali2.jpg")
 
 
 
