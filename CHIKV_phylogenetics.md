@@ -1,7 +1,7 @@
 Filogenia CHIKV (em andamento)
 ================
 Diego G. Teixeira
-09/04/2020
+10/04/2020
 
 ## Introdução
 
@@ -166,10 +166,34 @@ cobertura e muitas regiões com supostos indels (inserções ou deleções),
 as quais, no fim, não irão adicionar muita coisa na inferência da
 filogenia. O passo seguinte é remover as regiões de baixa cobertura
 dentro da região de interesse no alinhamento. *Resuzir o alinhamento
-dessa forma faz o programa de inferência rodar mais rápido,além de
+dessa forma faz o programa de inferência rodar mais rápido, além de
 reduzir a quantidade de sítios sem informação de parcimônia (sítios que
 contenham pelo menos dois tipos de nucleotídeos diferentes, e que pelo
 menos dois deles ocorram com uma freqência mínima de duas vezes). Um
 exemplo do que eu estou falando é mostrado a seguir:*
 
-<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/ali2.jpg" width="90%" style="display: block; margin: auto;" />
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/ali2.jpg" title="A seta vermelha indica um exemplo de sítio que não irá alterar a análise filogenética caso seja removido." alt="A seta vermelha indica um exemplo de sítio que não irá alterar a análise filogenética caso seja removido." width="90%" style="display: block; margin: auto;" />
+
+Por fim, irei remover da análise todas as seqências com cumprimento
+menor do que 75% do comprimento total do alinhamento. No caso, o nosso
+alinhamento apresenta 11.337 sítios, 75% disso corresponde a 8.427.
+desse modo, eu irei remover todas as sequências com comprimento inferior
+a 8.427 bases nucleotídicas, onde mais de 25% é composto por gaps. Para
+realizar essa etapa da análise, utilizarei uma ferramenta chamada
+(CIAlign)\[<https://pypi.org/project/cialign/>\].
+
+``` bat
+CIAlign --infile CHIKV_Country_OPAL_MAFFT_noN_TRIM.fasta --outfile_stem CHIKV_Country_OPAL_MAFFT_noN_TRIM --remove_short --remove_min_length 8427 --plot_coverage_input --plot_coverage_output
+```
+
+Abrindo o alinhamento final no Aliview, nos temos ele desta forma:
+
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/ali3.png" width="90%" style="display: block; margin: auto;" />
+
+## Inferindo a filogenia
+
+## Admixture
+
+## Filogenia + Admixture
+
+## teste de Recombinação
