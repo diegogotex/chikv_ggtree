@@ -305,22 +305,27 @@ g <- ggtree(arvre_teste) +
   geom_balance(node = 859, fill = "yellowgreen", color = NA)+ #Brasil
   geom_treescale(x=0.0001,y=250,offset = 10)
 
-```
-<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/tree_nodes.png" width="100%" style="display: block; margin: auto;" />
+#associando o stop codon opal
+#somente o codon mais frequente, o CGA
+g <- g %<+% head + 
+  geom_tippoint(aes(color=Opal), size=1)+
+  scale_color_manual(values = alpha(c("red","black","blue","white", "yellow2","violetred4"),
+                                    c(0,1,0,0,0,0)))
+g
 
+```
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/tree_CGA.png" width="100%" style="display: block; margin: auto;" />
 
 
 Agora colocando todos os codons diferentes.
 ```R
 
-#associando o stop codon opal
-g <- g %<+% head + 
+g1 <- g %<+% head + 
   geom_tippoint(aes(color=Opal), size=1)+
   scale_color_manual(values = alpha(c("red","black","blue","white", "yellow2","violetred4"),
                                     c(1,1,1,0,1,1)))
 
-#plotando a árvore
-g
+g1
 
 ```
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/tree_annot.png" width="100%" style="display: block; margin: auto;" />
