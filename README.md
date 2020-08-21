@@ -293,6 +293,7 @@ o output fica assim:
 
 Agora que eu sei que eu quero os nós 841 (genótipo ECSA); 1223 (Asian); 828 (African); 904 (IOL); 859 (Brasil), eu vou adicionar essas informações no objeto da árvore e em seguida eu vou adicionar pontos coloridos nas folhas com diferentes codons na posição de transição entre a nsp3 e nsp4.
 
+Vou primeiro plotar a árvore com o codom CGA que é o mais frente, além do códom de parada.
 ```R
 
 #highlight nos nós para definir os genótipos
@@ -303,6 +304,14 @@ g <- ggtree(arvre_teste) +
   geom_balance(node = 904, fill = "springgreen3", color = NA)+ #IOL
   geom_balance(node = 859, fill = "yellowgreen", color = NA)+ #Brasil
   geom_treescale(x=0.0001,y=250,offset = 10)
+
+```
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/tree_nodes.png" width="100%" style="display: block; margin: auto;" />
+
+
+
+Agora colocando todos os codons diferentes.
+```R
 
 #associando o stop codon opal
 g <- g %<+% head + 
