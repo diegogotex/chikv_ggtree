@@ -356,11 +356,25 @@ Como sugerido no manual do programa, uma etapa importante para a análise é ide
 
 ```shell
 #testar o melhor K no admixture
-#for K in 1 2 3 4 5 6 7 8 9 10; do ~/Programs/admixture_macosx-1.3.0/admixture --cv CHIKV.ped $K | tee log${K}.out; done
+for K in 1 2 3 4 5 6 7 8 9 10; do ~/Programs/admixture_macosx-1.3.0/admixture --cv CHIKV.ped $K | tee log${K}.out; done
 
-
+#pegando os valores de CV
+grep -h CV log*.out
 ```
-após a execução pro programa, eu vou 
+```bash
+CV error (K=1): 0.34922
+CV error (K=2): 0.14131
+CV error (K=3): 0.09570
+CV error (K=4): 0.07196
+CV error (K=5): 0.06459
+CV error (K=6): 0.06036
+CV error (K=7): 0.05869
+CV error (K=8): 0.04946
+CV error (K=9): 0.04873
+CV error (K=10): 0.04782
+```
+
+após a execução pro programa, eu vou importar os resultados no R e gerar um gráfico para o CV.
 
 ```R
 
