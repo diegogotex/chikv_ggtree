@@ -333,6 +333,55 @@ g1
 
 ## Admixture
 
+A realização do teste de admixture é um pouco laborosa, quando o dado de partida é o alinhamento múltiplo de sequências, mas é factível. Para essa análise, o ponto de partida é o alinhamento multiplo de sequências já tratado, após o passo do CIAlign.
+
+O alinhamento vai servir como entrada no software [snp-sites](https://github.com/sanger-pathogens/snp-sites) o qual irá produzor um arquivo VCF.
+
+```shell 
+#transformar MSA em vcf
+#snp-sites -v -o CHIKV_all_COUNTRY_MAFFT_TRIM_removeN_noREF.vcf CHIKV_all_COUNTRY_MAFFT_TRIM_removeN_noREF.fasta
+
+```
+
+em seguida, precisaremos formatar o arquivo .vcf no formato do [plink](https://www.cog-genomics.org/plink/2.0/), o qual nos vai fornocer o arquivo .ped
+
+```shell
+#VCF em .ped
+#~/Programs/plink_mac_20200219/plink --vcf CHIKV_all_COUNTRY_MAFFT_TRIM_removeN_noREF.vcf --double-id  --recode12  --out CHIKV
+```
+
+uma vez que eu consegui chegar ao arquivo .ped, eu estou apto a executar o programa (ADMIXTURE)[http://dalexander.github.io/admixture/download.html]. O ADMIXTURE é um programa que estima a ancestralidade de indivíduos não relacionados, como é descrito no manuscrito do aritgo do software [Alexander2009]. 
+
+Como sugerido no manual do programa, uma etapa importante para a análise é identificar a quantidade de populações ancestreais, postulada pela letra K, realizando um processo chamado de cross-validação. Eu irei testar a validação para um número de 1 até 10 populações diferentes. 
+
+```shell
+#testar o melhor K no admixture
+#for K in 1 2 3 4 5 6 7 8 9 10; do ~/Programs/admixture_macosx-1.3.0/admixture --cv CHIKV.ped $K | tee log${K}.out; done
+
+
+```
+após a execução pro programa, eu vou 
+
+```R
+
+CV_error <- as.data.frame(matrix(nrow = 10, ncol = 2))
+colnames(CV_error) <- c("K","CV")
+CV_error$K <- c(1:10)
+CV_error$CV <- c(0.34922, 0.14131, 0.09570, 0.07196, 0.06459, 0.06036, 0.05869, 0.04946, 0.04873, 0.04782)
+
+plot(CV_error$K, 
+     CV_error$CV, 
+     type = "b", #both, linha e ponto
+     xlab = "K",
+     ylab = "Cross-Validation error",
+     xaxt = "n")
+axis(1, at = c(1:10))
+
+```
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admixture_cv.png" width="100%" style="display: block; margin: auto;" />
+
+
+
 ## Filogenia + Admixture
 
 ## teste de Recombinação
