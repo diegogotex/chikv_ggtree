@@ -350,7 +350,7 @@ em seguida, precisaremos formatar o arquivo .vcf no formato do [plink](https://w
 #~/Programs/plink_mac_20200219/plink --vcf CHIKV_all_COUNTRY_MAFFT_TRIM_removeN_noREF.vcf --double-id  --recode12  --out CHIKV
 ```
 
-uma vez que eu consegui chegar ao arquivo .ped, eu estou apto a executar o programa (ADMIXTURE)[http://dalexander.github.io/admixture/download.html]. O ADMIXTURE é um programa que estima a ancestralidade de indivíduos não relacionados, como é descrito no manuscrito do aritgo do software [Alexander2009]. 
+uma vez que eu consegui chegar ao arquivo .ped, eu estou apto a executar o programa [ADMIXTURE] (http://dalexander.github.io/admixture/download.html). O ADMIXTURE é um programa que estima a ancestralidade de indivíduos não relacionados, como é descrito no manuscrito do aritgo do software [Alexander2009]. 
 
 Como sugerido no manual do programa, uma etapa importante para a análise é identificar a quantidade de populações ancestreais, postulada pela letra K, realizando um processo chamado de cross-validação. Eu irei testar a validação para um número de 1 até 10 populações diferentes. 
 
@@ -374,7 +374,7 @@ CV error (K=9): 0.04873
 CV error (K=10): 0.04782
 ```
 
-após a execução pro programa, eu vou importar os resultados no R e gerar um gráfico para o CV.
+após a execução pro programa, eu vou importar os resultados no R e gerar um gráfico para o CV. **OBS**: esse passo não é necessário, uma vez que você já tem os valores e consegue decidir o valor de K somente por eles, mas ainda assim eu gosto de realizá-lo.
 
 ```R
 
@@ -392,7 +392,15 @@ plot(CV_error$K,
 axis(1, at = c(1:10))
 
 ```
-<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admixture_cv.png" width="100%" style="display: block; margin: auto;" />
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admixture_cv.png" width="80%" style="display: block; margin: auto;" />
+
+
+Agora que eu já conheço o CV para cada um das "quantidades de ancestrais" eu posso executar o admixture para cada um dos __K__ que eu achar representativo para a minha amostra. 
+
+**EU vou analisar o admixture para cada um dos 10K que eu rodei no CV, mas só vou usar alguns deles para a análise final:**
+1. K3 (quantidade de gentótipos diferentes identificados para CHIKV);
+2. K4 (Valor cd CV baixo, próximo ao de K5, K6 e K7);
+3. K8 (Valor de CV baixo, similar ao K9 e K10);
 
 
 
