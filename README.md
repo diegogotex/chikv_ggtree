@@ -398,9 +398,9 @@ axis(1, at = c(1:10))
 Agora que eu já conheço o CV para cada um das "quantidades de ancestrais" eu posso executar o admixture para cada um dos __K__ que eu achar representativo para a minha amostra. 
 
 **EU vou analisar o admixture para cada um dos 10K que eu rodei no CV, mas só vou usar alguns deles para a análise final:**
-1. K3 (quantidade de gentótipos diferentes identificados para CHIKV);
-2. K4 (Valor cd CV baixo, próximo ao de K5, K6 e K7);
-3. K8 (Valor de CV baixo, similar ao K9 e K10);
+**1. K3 (quantidade de gentótipos diferentes identificados para CHIKV);**
+**2. K4 (Valor cd CV baixo, próximo ao de K5, K6 e K7);**
+**3. K8 (Valor de CV baixo, similar ao K9 e K10);**
 
 
 
