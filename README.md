@@ -398,11 +398,36 @@ axis(1, at = c(1:10))
 Agora que eu já conheço o CV para cada um das "quantidades de ancestrais" eu posso executar o admixture para cada um dos __K__ que eu achar representativo para a minha amostra. 
 
 **EU vou analisar o admixture para cada um dos 10K que eu rodei no CV, mas só vou usar alguns deles para a análise final:**
+
 **1. K3 (quantidade de gentótipos diferentes identificados para CHIKV);**
+
 **2. K4 (Valor cd CV baixo, próximo ao de K5, K6 e K7);**
+
 **3. K8 (Valor de CV baixo, similar ao K9 e K10);**
 
 
+K3
+```R
+#puxando o arquivo
+admixK3 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/K3/CHIKV.3.Q")
+#puxando o nome das amostras
+admixK3$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
+#dando nome às colunas relacionado ao genótipo 
+colnames(admixK3) <- c("Asian","ECSA","West African","id")
+#reordenando as colunas
+admixK3<- admixK3[,c(4,1:3)]
+
+#plotando
+barplot(t(as.matrix(admixK3[,2:4])),
+        col= rainbow(3),
+        xlab="Virus", 
+        ylab = "Ancestry",
+        space = 0,
+        border = NA
+)
+```
+
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K3.png" width="80%" style="display: block; margin: auto;" />
 
 ## Filogenia + Admixture
 
