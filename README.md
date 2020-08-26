@@ -406,7 +406,6 @@ Agora que eu já conheço o CV para cada um das "quantidades de ancestrais" eu p
 **3. K8 (Valor de CV baixo, similar ao K9 e K10);**
 
 
-K3
 ```R
 #puxando o arquivo
 admixK3 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/K3/CHIKV.3.Q")
@@ -426,8 +425,149 @@ barplot(t(as.matrix(admixK3[,2:4])),
         border = NA
 )
 ```
-
+K3
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K3.png" width="80%" style="display: block; margin: auto;" />
+
+
+```R
+#Já expliquei o código acima, aqui vou só jogar o código dos outros plots mesmo.
+
+admixK4 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/K4/CHIKV.4.Q")
+admixK4$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
+colnames(admixK4) <- c("Asian","ECSA","West African","Mix","id")
+admixK4<- admixK4[,c(5,1:4)]
+admix4_re <- reshape2::melt(admixK4)
+
+
+barplot(t(as.matrix(admixK4[,2:5])),
+        col= rainbow(4),
+        xlab="Virus", 
+        ylab = "Ancestry",
+        space = 0,
+        border = NA
+        )
+
+
+
+admixK5 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/K5/CHIKV.5.Q")
+admixK5$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
+colnames(admixK5) <- c("Asian","ECSA","West African","Mix","Mix2","id")
+admixK5<- admixK5[,c(6,1:5)]
+admix5_re <- reshape2::melt(admixK5)
+
+
+barplot(t(as.matrix(admixK5[,2:6])),
+        col= rainbow(4),
+        xlab="Virus", 
+        ylab = "Ancestry",
+        space = 0,
+        border = NA
+)
+
+
+admixK6 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/K6/CHIKV.6.Q")
+admixK6$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
+colnames(admixK6) <- c("Asian","ECSA","West African","Mix","Mix2","Mix3","id")
+admixK6<- admixK6[,c(7,1:6)]
+admix6_re <- reshape2::melt(admixK6)
+
+
+barplot(t(as.matrix(admixK6[,2:7])),
+        col= rainbow(6),
+        xlab="Virus", 
+        ylab = "Ancestry",
+        space = 0,
+        border = NA
+)
+
+
+
+admixK7 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/K7/CHIKV.7.Q")
+admixK7$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
+colnames(admixK7) <- c("Asian","ECSA","West African","Mix","Mix2","Mix3","Mix4","id")
+admixK7<- admixK7[,c(8,1:7)]
+admix7_re <- reshape2::melt(admixK7)
+
+
+barplot(t(as.matrix(admixK7[,2:8])),
+        col= rainbow(7),
+        xlab="Virus", 
+        ylab = "Ancestry",
+        space = 0,
+        border = NA
+)
+
+
+
+admixK8 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/K8/CHIKV.8.Q")
+admixK8$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
+colnames(admixK8) <- c("Asian","ECSA","West African","Mix","Mix2","Mix3","Mix4","Mix5","id")
+admixK8<- admixK8[,c(9,1:8)]
+admixK8_re <- reshape2::melt(admixK8)
+
+
+barplot(t(as.matrix(admixK8[,2:9])),
+        col= rainbow(8),
+        xlab="Virus", 
+        ylab = "Ancestry",
+        space = 0,
+        border = NA
+)
+
+admixK9 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/K9/CHIKV.9.Q")
+admixK9$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
+colnames(admixK9) <- c("Asian","ECSA","West African","Mix","Mix2","Mix3","Mix4","Mix5","Mix6","id")
+admixK9<- admixK9[,c(10,1:9)]
+admixK8_re <- reshape2::melt(admixK9)
+
+
+barplot(t(as.matrix(admixK9[,2:10])),
+        col= rainbow(9),
+        xlab="Virus", 
+        ylab = "Ancestry",
+        space = 0,
+        border = NA
+)
+
+
+admixK10 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/K10/CHIKV.10.Q")
+admixK10$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
+colnames(admixK10) <- c("Asian","ECSA","West African","Mix","Mix2","Mix3","Mix4","Mix5","Mix6","Mix7","id")
+admixK10<- admixK10[,c(11,1:10)]
+admixK10_re <- reshape2::melt(admixK10)
+
+
+barplot(t(as.matrix(admixK10[,2:11])),
+        col= rainbow(10),
+        xlab="Virus", 
+        ylab = "Ancestry",
+        space = 0,
+        border = NA
+)
+
+```
+K4
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K4.png" width="80%" style="display: block; margin: auto;" />
+
+K5
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K5.png" width="80%" style="display: block; margin: auto;" />
+
+K6
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K6.png" width="80%" style="display: block; margin: auto;" />
+
+K7
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K7.png" width="80%" style="display: block; margin: auto;" />
+
+K8
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K8.png" width="80%" style="display: block; margin: auto;" />
+
+K9
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K9.png" width="80%" style="display: block; margin: auto;" />
+
+K10
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K10.png" width="80%" style="display: block; margin: auto;" />
+
+
 
 ## Filogenia + Admixture
 
