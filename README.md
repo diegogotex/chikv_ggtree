@@ -546,25 +546,25 @@ barplot(t(as.matrix(admixK10[,2:11])),
 )
 
 ```
-K4
+K4</br>
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K4.png" width="80%" style="display: block; margin: auto;" />
 
-K5
+K5</br>
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K5.png" width="80%" style="display: block; margin: auto;" />
 
-K6
+K6</br>
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K6.png" width="80%" style="display: block; margin: auto;" />
 
-K7
+K7</br>
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K7.png" width="80%" style="display: block; margin: auto;" />
 
-K8
+K8</br>
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K8.png" width="80%" style="display: block; margin: auto;" />
 
-K9
+K9</br>
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K9.png" width="80%" style="display: block; margin: auto;" />
 
-K10
+K10</br>
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K10.png" width="80%" style="display: block; margin: auto;" />
 
 
