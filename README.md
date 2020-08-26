@@ -425,8 +425,7 @@ barplot(t(as.matrix(admixK3[,2:4])),
         border = NA
 )
 ```
-K3
-
+K3</br>
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K3.png" width="80%" style="display: block; margin: auto;" />
 
 
