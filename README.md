@@ -428,7 +428,6 @@ admixK4 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPA
 admixK4$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
 colnames(admixK4) <- c("Asian","ECSA","West African","Mix","id")
 admixK4<- admixK4[,c(5,1:4)]
-admix4_re <- reshape2::melt(admixK4)
 
 
 barplot(t(as.matrix(admixK4[,2:5])),
@@ -445,7 +444,6 @@ admixK5 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPA
 admixK5$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
 colnames(admixK5) <- c("Asian","ECSA","West African","Mix","Mix2","id")
 admixK5<- admixK5[,c(6,1:5)]
-admix5_re <- reshape2::melt(admixK5)
 
 
 barplot(t(as.matrix(admixK5[,2:6])),
@@ -461,7 +459,6 @@ admixK6 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPA
 admixK6$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
 colnames(admixK6) <- c("Asian","ECSA","West African","Mix","Mix2","Mix3","id")
 admixK6<- admixK6[,c(7,1:6)]
-admix6_re <- reshape2::melt(admixK6)
 
 
 barplot(t(as.matrix(admixK6[,2:7])),
@@ -478,7 +475,6 @@ admixK7 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPA
 admixK7$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
 colnames(admixK7) <- c("Asian","ECSA","West African","Mix","Mix2","Mix3","Mix4","id")
 admixK7<- admixK7[,c(8,1:7)]
-admix7_re <- reshape2::melt(admixK7)
 
 
 barplot(t(as.matrix(admixK7[,2:8])),
@@ -495,7 +491,6 @@ admixK8 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPA
 admixK8$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
 colnames(admixK8) <- c("Asian","ECSA","West African","Mix","Mix2","Mix3","Mix4","Mix5","id")
 admixK8<- admixK8[,c(9,1:8)]
-admixK8_re <- reshape2::melt(admixK8)
 
 
 barplot(t(as.matrix(admixK8[,2:9])),
@@ -510,7 +505,6 @@ admixK9 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPA
 admixK9$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
 colnames(admixK9) <- c("Asian","ECSA","West African","Mix","Mix2","Mix3","Mix4","Mix5","Mix6","id")
 admixK9<- admixK9[,c(10,1:9)]
-admixK8_re <- reshape2::melt(admixK9)
 
 
 barplot(t(as.matrix(admixK9[,2:10])),
@@ -526,7 +520,6 @@ admixK10 <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OP
 admixK10$sample <- read.table("~/Dropbox/Doutorado/CHIKV_PHYLO/Country/CHIKV_Country_OPAL_MAFFT_noN_TRIM/vcf/admixture/CHIKV.head.txt", header = F)$V1
 colnames(admixK10) <- c("Asian","ECSA","West African","Mix","Mix2","Mix3","Mix4","Mix5","Mix6","Mix7","id")
 admixK10<- admixK10[,c(11,1:10)]
-admixK10_re <- reshape2::melt(admixK10)
 
 
 barplot(t(as.matrix(admixK10[,2:11])),
@@ -562,11 +555,51 @@ K10</br>
 
 Essa visualização padrão tanto do Admixture quanto do Structure são legais, mas infelizmente a gente não consegue distinguir direito a qual sequência perntece a barra, e adicionar o nome à cada uma deixa o gráfico ainda mais poluído. Como você pode observar, a medida que vamos aumentando o número de K, também vai aumentando a complexidade de que interpretar o gráfico. Por causa disso, eu vou elencar somente 3 gráficos para continuar a análise:
 
-**EU vou analisar o admixture para cada um dos 10K que eu rodei no CV, mas só vou usar alguns deles para a análise final:**</br>
 **1. K3 (quantidade de gentótipos diferentes identificados para CHIKV);**</br>
 **2. K4 (Valor cd CV baixo, próximo ao de K5, K6 e K7);**</br>
 **3. K8 (Valor de CV baixo, similar ao K9 e K10);**
 
 ## Filogenia + Admixture
+
+Para ajudar na visualização do Admixture, eu resolvi plotar os gráficos juntos a filogenia. A melhor forma de fazer isso é por meio do ggtree, já que o Figtree não permite esse tipo de visualização e eu não consigo imaginar o tamanho do trabalho que vai dar pra alinhar as colunas às folhas da topologia de forma manual. 
+
+a primeira coisa que eu devo fazer é transformar a tabela do admixture de modo que seja lida como um objeto do ggplot (pacote gráfico associado ao ggtree), para que eu associe o valores às folhas da ávore por meio no nome da sequência.
+
+```R
+#convertendo as informacões do dataframe de um modo que o ggplot2 compreenda
+admix3_re <- reshape2::melt(admixK3)
+admix4_re <- reshape2::melt(admixK4)
+admix8_re <- reshape2::melt(admixK8)
+```
+
+Uma vez que eu transformei o dataframe, eu posso associar ao objeto da árvore no ggtree:
+
+```R
+#plotando com o admixture K3
+g <- facet_plot(g, panel = "Admixture K3", data = admix3_re,
+                geom = geom_barh,
+                mapping = aes(x = value, fill=as.factor(variable)),
+                stat = 'identity',
+                width=1)
+
+#plotando com o admixture K4
+g <- facet_plot(g, panel = "Admixture K4", data = admix4_re,
+                geom = geom_barh,
+                mapping = aes(x = value, fill=as.factor(variable)),
+                stat = 'identity',
+                width=1)
+
+g <- facet_plot(g, panel = "Admixture K8", data = admixK8_re,
+                geom = geom_barh,
+                mapping = aes(x = value, fill=as.factor(variable)),
+                stat = 'identity',
+                width=1)
+
+g
+```
+
+<img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/arvre_admix.png" width="80%" style="display: block; margin: auto;" />
+
+
 
 ## teste de Recombinação
