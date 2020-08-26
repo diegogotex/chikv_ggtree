@@ -397,14 +397,6 @@ axis(1, at = c(1:10))
 
 Agora que eu já conheço o CV para cada um das "quantidades de ancestrais" eu posso executar o admixture para cada um dos __K__ que eu achar representativo para a minha amostra. 
 
-**EU vou analisar o admixture para cada um dos 10K que eu rodei no CV, mas só vou usar alguns deles para a análise final:**
-
-**1. K3 (quantidade de gentótipos diferentes identificados para CHIKV);**
-
-**2. K4 (Valor cd CV baixo, próximo ao de K5, K6 e K7);**
-
-**3. K8 (Valor de CV baixo, similar ao K9 e K10);**
-
 
 ```R
 #puxando o arquivo
@@ -567,6 +559,13 @@ K9</br>
 K10</br>
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K10.png" width="80%" style="display: block; margin: auto;" />
 
+
+Essa visualização padrão tanto do Admixture quanto do Structure são legais, mas infelizmente a gente não consegue distinguir direito a qual sequência perntece a barra, e adicionar o nome à cada uma deixa o gráfico ainda mais poluído. Como você pode observar, a medida que vamos aumentando o número de K, também vai aumentando a complexidade de que interpretar o gráfico. Por causa disso, eu vou elencar somente 3 gráficos para continuar a análise:
+
+**EU vou analisar o admixture para cada um dos 10K que eu rodei no CV, mas só vou usar alguns deles para a análise final:**</br>
+**1. K3 (quantidade de gentótipos diferentes identificados para CHIKV);**</br>
+**2. K4 (Valor cd CV baixo, próximo ao de K5, K6 e K7);**</br>
+**3. K8 (Valor de CV baixo, similar ao K9 e K10);**
 
 ## Filogenia + Admixture
 
