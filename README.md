@@ -426,6 +426,7 @@ barplot(t(as.matrix(admixK3[,2:4])),
 )
 ```
 K3
+
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K3.png" width="80%" style="display: block; margin: auto;" />
 
 
@@ -566,7 +567,6 @@ K9
 
 K10
 <img src="https://github.com/diegogotex/chikv_ggtree/blob/master/Figs/admix_K10.png" width="80%" style="display: block; margin: auto;" />
-
 
 
 ## Filogenia + Admixture
